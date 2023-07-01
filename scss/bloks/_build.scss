@@ -1,0 +1,261 @@
+@use "../veriables";
+@import "../mixins";
+.build {
+    background-image: url("/icons/build-top-img.svg");
+    @include bgimage(200px 244px, right -113px top);
+
+    background-color: var(--main-body-sec-color);
+}
+
+.build__inner {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    @include flexbox(flex, column, space-between, center);
+}
+.build__title-box {
+    max-width: 240px;
+    width: 100%;
+    display: block;
+    margin-right: auto;
+}
+.build__title-box::before {
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+
+    margin-bottom: 32px;
+    background-image: url("/icons/build-red-line.svg");
+    @include bgimage(50px 4px, center);
+    content: "";
+}
+.build__title {
+    @include fonts;
+    margin-bottom: 56px;
+    color: var(--main-font-color-white);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+}
+.build__list {
+    @include flexbox(flex, column, space-between, center);
+    @include listbox(0, 0, none);
+}
+.build__item {
+    @include flexbox(flex, column, space-between, center);
+}
+.build__item:not(:last-child) {
+    margin-bottom: 48px;
+}
+.build__link {
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.build__name {
+    @include fonts;
+    color: var(--main-red-color);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+.build__name::before {
+    width: 72px;
+    height: 72px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    background-image: url("/icons/experienced.svg");
+    @include bgimage(72px 72px, calc(50%) calc(50%));
+    content: " ";
+}
+.build__name--second::before {
+    width: 72px;
+    height: 72px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    background-image: url("/icons/easy-img.svg");
+    @include bgimage(72px 72px, calc(50%) calc(50%));
+    content: " ";
+}
+.build__name--thee::before {
+    width: 72px;
+    height: 72px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    background-image: url("/icons/productivy.svg");
+    @include bgimage(72px 72px, calc(50%) calc(50%));
+    content: " ";
+}
+.build__desc {
+    @include fonts;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 25px;
+    color: var(--main-font-color-white);
+}
+@include media(375px) {
+    .build {
+        background-image: url("/icons/build-top-img.svg");
+        @include bgimage(200px 244px, right -100px top);
+        background-color: var(--main-body-sec-color);
+    }
+    .build__link {
+        max-width: 327px;
+        width: 100%;
+    }
+    .build__desc {
+        @include fonts;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 25px;
+        color: var(--main-font-color-white);
+    }
+}
+@include media(540px) {
+    .build__inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .build__title-box {
+        max-width: 445px;
+        width: 100%;
+    }
+    .build__title {
+        font-size: 28px;
+    }
+}
+.build__link {
+    max-width: 400px;
+    width: 100%;
+}
+@include media(700px) {
+    .build__inner {
+        padding-left: 58px;
+        padding-right: 58px;
+    }
+    .build__title-box {
+        max-width: 500px;
+        width: 100%;
+    }
+    .build__title {
+        font-size: 32px;
+    }
+    .build__item {
+        margin-left: 23px;
+    }
+
+    .build__name::before {
+        position: absolute;
+        background-image: url("/icons/experienced.svg");
+        @include bgimage(72px 72px, center center);
+        content: " ";
+        top: calc(50% - 34px);
+        left: calc(50% - 280px);
+    }
+    .build__name--second::before {
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        background-image: url("/icons/easy-img.svg");
+        @include bgimage(72px 72px, center center);
+        content: " ";
+        top: calc(50% - 34px);
+        left: calc(50% - 280px);
+    }
+    .build__name--thee::before {
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        background-image: url("/icons/productivy.svg");
+        @include bgimage(72px 72px, center);
+        content: " ";
+        top: calc(50% - 34px);
+        left: calc(50% - 280px);
+    }
+}
+@include media(767px) {
+    .build__item {
+        margin-left: 60px;
+    }
+    .build__link {
+        max-width: 478px;
+        width: 100%;
+    }
+    .build__desc {
+        text-align: start;
+    }
+    .build__name::before {
+        position: absolute;
+        background-image: url("/icons/experienced.svg");
+        @include bgimage(72px 72px, center center);
+        content: " ";
+        top: calc(50% - 34px);
+        left: calc(50% - 333px);
+    }
+    .build__name--second::before {
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        background-image: url("/icons/easy-img.svg");
+        @include bgimage(72px 72px, center center);
+        content: " ";
+        top: calc(50% - 34px);
+        left: calc(50% - 333px);
+    }
+    .build__name--thee::before {
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        background-image: url("/icons/productivy.svg");
+        @include bgimage(72px 72px, center);
+        content: " ";
+        top: calc(50% - 34px);
+        left: calc(50% - 333px);
+    }
+}
+@include media(1100px) {
+    .build {
+        background-image: url("/icons/build-top-img.svg");
+        @include bgimage(200px 244px, right -113px bottom);
+
+        background-color: var(--main-body-sec-color);
+    }
+    .build__inner {
+        padding-left: 0;
+        padding-right: 0;
+        @include flexbox(flex, row, center, center);
+    }
+    .build__title-box {
+        max-width: 400px;
+        width: 100%;
+    }
+    .build__title {
+        margin-bottom:0;
+        font-size: 40px;
+        line-height: 48px;
+    }
+    .build__item {
+        margin-left: 0;
+    }
+    .build__link {
+        max-width: 445px;
+        width: 1000%;
+    }
+}
+@include media (1200px){
+    .build__title-box{
+        max-width: 445px;
+        width: 100%;
+    }
+    .build__title{
+        font-size: 48px;
+    }
+}

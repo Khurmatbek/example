@@ -1,0 +1,114 @@
+@use "../veriables";
+@import "../mixins";
+
+.header {
+    padding-top: 48px;
+}
+.header__inner {
+    @include flexbox(flex, row, space-between, center);
+}
+.logo__link {
+    display: inline-block;
+    text-decoration: none;
+}
+.logo__img {
+    display: block;
+}
+.header__wrapper-nav {
+    margin-left: auto;
+    text-align: end;
+}
+
+.open .header__wrapper-nav {
+    width: 80%;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    @include flexbox(flex, column-reverse, start, end);
+    padding-top: 48px;
+    padding-right: 25px;
+    background-color: #2c6269;
+    background-image: url("/icons/rdcrmenu.svg");
+    @include bgimage(200px 200px, right -93px bottom);
+    top: 0;
+    right: 0;
+}
+
+.open .nav__block {
+    @include flexbox(flex, column, start, start);
+    margin: 0 auto;
+}
+.open .header__list {
+    @include flexbox(flex, column, center, center);
+    gap: 24px;
+    margin-bottom: 36px;
+}
+.open .header__btn {
+    background-image: url("/icons/nope.svg");
+    @include bgimage(18px 17px, center);
+}
+
+.nav__block {
+    display: none;
+}
+
+.header__list {
+    @include flexbox(flex, row, space-between, center);
+    @include listbox(0, 0, none);
+    gap: 40px;
+}
+
+.header__link {
+    color: var(--main-font-color-white);
+    font-size: 18px;
+    @include fonts;
+    font-weight: 600;
+    line-height: 28px;
+    text-decoration: none;
+}
+.header__contact-link {
+    min-width: 153px;
+    display: inline-block;
+    padding: 9px 15px 11px 15px;
+    color: var(--main-font-color-white);
+    font-size: 18px;
+    @include fonts;
+    font-weight: 600;
+    line-height: 28px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 24px;
+    border: 2px solid var(--main-font-color-white);
+}
+.header__btn {
+    width: 20px;
+    height: 17px;
+    background-image: url("/icons/lines.svg");
+    @include bgimage(20px 17px, center);
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+@include media(575px) {
+    .logo__link {
+        margin-right: 48px;
+    }
+    .header__inner {
+        justify-content: start;
+    }
+    .header__wrapper-nav {
+        width: 100%;
+    }
+    .nav__block {
+        @include flexbox(flex, row, space-between, center);
+    }
+    .header__btn {
+        display: none;
+    }
+}
+@include media(650px) {
+    .container {
+        padding: 0 39px;
+    }
+}

@@ -1,0 +1,27 @@
+@mixin flexbox($display, $flex-d, $just-c, $align-i) {
+    display: $display;
+    flex-direction: $flex-d;
+    justify-content: $just-c;
+    align-items: $align-i;
+}
+@mixin listbox($margin, $padding, $lisn) {
+    margin: $margin;
+    padding: $padding;
+    list-style: $lisn;
+}
+@mixin media($min-width) {
+    @media only screen and (min-width: $min-width) {
+        @content;
+    }
+}
+@mixin fonts {
+    margin: 0;
+    font-family: "Livvic";
+    font-style: normal;
+}
+@mixin bgimage ($bgsize, $bgpostion){
+    background-size:$bgsize;
+    background-repeat:no-repeat;
+    background-position:$bgpostion;
+}
+

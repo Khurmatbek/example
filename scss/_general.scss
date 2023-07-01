@@ -1,0 +1,18 @@
+@import "./veriables";
+@import "./mixins";
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    display: none;
+    margin: 0;
+    overflow-x: hidden;
+}
+@include media(320px) {
+    body {
+        display: block;
+        background-color: var(--main-body-color);
+    }
+}
