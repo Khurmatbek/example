@@ -1,2 +1,146 @@
 @use "../veriables";
-@import "../mixins";
+@use "../mixins" as m;
+.success {
+    position: relative;
+    padding-top: 140px;
+    padding-bottom: 164px;
+    background-image: url("/icons/success-img.svg"), url("/images/successs-bottom-img.svg");
+   background-size: 147px 100px , 200px 200px;
+   background-repeat: no-repeat;
+   background-position: left top , right bottom -50px;
+
+
+}
+// .succes__inner {
+
+// }
+.success__title-box {
+    margin: 0 auto;
+    margin-bottom: 48px;
+    max-width: 280px;
+    width: 100%;
+}
+.success__title {
+    @include m.fonts;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 30px;
+    color: var(--main-font-color-white);
+}
+.success__list {
+    position: relative;
+    z-index: 10;
+    @include m.listbox(0, 0, none);
+    @include m.flexbox(flex, column, space-between, center);
+    gap: 48px;
+}
+.success__item {
+    position: relative;
+    z-index: 10;
+}
+.success__link {
+    display: inline-block;
+    text-decoration: none;
+}
+.success__link::before {
+    position: absolute;
+    z-index: -1;
+    width: 282px;
+    height: 56px;
+    background-image: url("/images/blockquit.svg");
+    @include m.bgimage(67px 56px, center calc(50% - 2px));
+    content: " ";
+}
+.success__desc-box {
+    padding-top: 36px;
+    max-width: 280px;
+    width: 100%;
+    margin-bottom: 16px;
+    text-align: start;
+}
+.success__desc {
+    @include m.fonts;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--main-font-color-white);
+}
+.success__name {
+    @include m.fonts;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 25px;
+    color: var(--main-success-name-color);
+}
+.seccess__profession {
+    @include m.fonts;
+    text-align: center;
+    font-size: 13   px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--main-font-color-white);
+}
+.seccess__profession::after {
+    width: 282px;
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+    background-image: url("/images/kady-baker.svg");
+    @include m.bgimage(62px 62px, calc(50%) calc(50% + 10px));
+    content: " ";
+}
+.success__item--sec .seccess__profession::after {
+    width: 282px;
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+    background-image: url("/images/aisha.svg");
+    @include m.bgimage(62px 62px, calc(50%) calc(50% + 10px));
+    content: " ";
+}
+.success__item--three .seccess__profession::after {
+    width: 282px;
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+    background-image: url("/images/arthur.svg");
+    @include m.bgimage(62px 62px, calc(50%) calc(50% + 10px));
+    content: " ";
+}
+
+
+
+@include m.media(375px){
+
+    .success__title-box{
+        max-width:327px;
+        width: 100%;
+    }
+    .success__title {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .success__desc-box {
+        max-width:327px;
+        width: 100%;
+
+    }
+    .success__desc{
+    font-size: 15px;
+    line-height: 25px;
+    }
+    .success__link::before {
+        position: absolute;
+        z-index: -1;
+        width: 282px;
+        height: 56px;
+        background-image: url("/images/blockquit.svg");
+        @include m.bgimage(67px 56px,calc(50% + 15px) calc(50% - 2px));
+        content: " ";
+    }
+}

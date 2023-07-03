@@ -18,7 +18,9 @@
     margin-left: auto;
     text-align: end;
 }
-
+.open{
+    position: fixed;
+}
 .open .header__wrapper-nav {
     width: 80%;
     height: 100vh;
@@ -106,6 +108,7 @@
     .header__btn {
         display: none;
     }
+  
 }
 @include media(650px) {
     .container {
