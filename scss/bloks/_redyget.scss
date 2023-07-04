@@ -1,0 +1,31 @@
+@use "../mixins" as m;
+.site__ready {
+    background-color: var(--main-red-color);
+    .ready__inner {
+        @include m.flexbox(flex, column, space-between, center);
+    }
+}
+
+    .ready__text-box {
+        max-width: 280px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .ready__text {
+        @include m.fonts;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        color: #012f34;
+    }
+    .ready__link {
+       @include m.fonts;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 28px;
+        color: #012f34;
+    }
+
