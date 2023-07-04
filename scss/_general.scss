@@ -1,4 +1,4 @@
-@import "./veriables";
+
 @import "./mixins";
 * {
     box-sizing: border-box;
@@ -15,6 +15,6 @@ body {
     body {
         display: block;
         background-color: var(--main-body-color);
-    
     }
 }
+

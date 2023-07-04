@@ -93,11 +93,15 @@
         padding: 0 80px;
     }
     .talent__text-box {
-        @include flexbox(flex, row, space-between, center);
+        @include flexbox(flex, row,space-between, center);
+        text-align: start;
     }
     .talent__title-box {
+        
         max-width: 550px;
         width: 100%;
+        margin-left: 0;
+    
     }
     .talent__title {
         text-align: start;
@@ -107,6 +111,7 @@
     .talent__desc-box {
         max-width: 445px;
         width: 100%;
+        margin-right: 0;
         text-align: start;
         &::before {
             display: inline-block;
